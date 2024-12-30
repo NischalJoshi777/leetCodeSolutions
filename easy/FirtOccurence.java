@@ -26,7 +26,7 @@ class Solution {
             } else {
                 if (j != 0) {// ignoring the first case of j = 0
                     j = lps[j - 1]; //resetting the value of j
-                    i--; // char at i needs to checked again
+                    i--; // char at i needs to be checked again
                 }
             }
         }
@@ -46,7 +46,7 @@ class Solution {
                 if (len != 0) {
                     len = lps[len - 1]; 
                 } else {
-                    lps[i] = 0;
+                    lps[i] = len; //len == 0;
                     i++;
                 }
             }

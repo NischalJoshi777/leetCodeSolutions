@@ -1,5 +1,7 @@
 package medium;
 
+import java.util.HashSet;
+
 public class LongestSubStringWithoutRepeatingChar {
     public static void main(String[] args){
 
@@ -29,5 +31,24 @@ class BruteSolution {
             }
         }
         return longestSubString.length();
+    }
+}
+
+
+class SlidingWindowP{
+    public int lengthOfLongestSubstring(String s) {
+        int maxlength = 0; // setting it to lowest possible value;  
+        int left = 0; // starting index of the window
+        HashSet <Character> subStringSet = new HashSet<Character>();
+        for(int right = 0; right < s.length(); right++){ //right is the closing index  
+            char current = s.charAt(right);
+            while(subStringSet.contains(current)){ 
+                subStringSet.remove(s.charAt(left));
+                left++;
+            }
+            subStringSet.add(current);
+            maxlength = Math.max(maxlength, right+1-left);
+        }
+        return maxlength;
     }
 }
