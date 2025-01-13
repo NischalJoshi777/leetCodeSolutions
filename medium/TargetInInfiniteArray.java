@@ -7,14 +7,12 @@ public class TargetInInfiniteArray {
     public int answer(int target, int[] arr){
         int start = 0; 
         int end = 1; 
-        int pos; 
         while(target > arr[end]){
            int temp = end+1; 
            end = (end-start+1)*2 + end;
            start = temp;
         } 
-        pos = binarySearch(target, start, end, arr);
-        return pos;
+        return  binarySearch(target, start, end, arr);
 
     }
     
