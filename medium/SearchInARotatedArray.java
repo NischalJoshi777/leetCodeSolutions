@@ -1,7 +1,7 @@
 public class SearchInARotatedArray {
    
     public static void main(String[] args){
-        int[] myArr = {4,5,6,7,0,1,2};
+        int[] myArr = {2,2,3,0,1,2};
         int target = 3; 
        System.out.println(search(myArr, target));
 
@@ -15,7 +15,11 @@ public class SearchInARotatedArray {
         mid = start + (end-start)/2;
         if(nums[mid] == target){
             return mid;
-        } else if(nums[start] <=nums[mid]){
+        } 
+        if(nums[start] == nums[mid] && nums[mid] == nums[end]){
+            start --;
+            end --;
+        }   else if(nums[start] <=nums[mid]){
             if( nums[start] <= target && target <= nums[mid]){
                 end = mid-1;
             } else{
