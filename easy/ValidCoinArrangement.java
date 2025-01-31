@@ -14,4 +14,9 @@ public class ValidCoinArrangement {
         }
         return end;
     }
+    
+    //quardractic solutions
+    public int arrangeCoin2(int n){
+        return (int)(Math.sqrt((long)2 * n + 0.25) - 0.5);
+        }
 }
