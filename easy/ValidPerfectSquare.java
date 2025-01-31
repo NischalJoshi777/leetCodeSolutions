@@ -1,3 +1,4 @@
+package easy;
 public class ValidPerfectSquare {
     public boolean isPerfectSquare(int num) {
         int start = 0; 
